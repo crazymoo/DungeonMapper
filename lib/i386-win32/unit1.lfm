@@ -1,0 +1,329 @@
+object Form1: TForm1
+  Left = 450
+  Height = 768
+  Top = 23
+  Width = 812
+  BorderStyle = bsSingle
+  Caption = 'Mapper'
+  ClientHeight = 748
+  ClientWidth = 812
+  Color = 4875942
+  Constraints.MinHeight = 768
+  Constraints.MinWidth = 812
+  Menu = MainMenu1
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnKeyPress = FormKeyPress
+  OnResize = FormResize
+  Position = poScreenCenter
+  LCLVersion = '1.4.4.0'
+  object memCellDescription: TMemo
+    Cursor = crNone
+    Left = 9
+    Height = 66
+    Top = 672
+    Width = 631
+    Anchors = [akLeft, akRight, akBottom]
+    BorderStyle = bsNone
+    Color = clWhite
+    Enabled = False
+    OnChange = memCellDescriptionChange
+    TabOrder = 0
+  end
+  object pnlDirectionBtns: TPanel
+    Left = 644
+    Height = 112
+    Top = 8
+    Width = 162
+    Anchors = [akTop, akRight]
+    BorderStyle = bsSingle
+    ClientHeight = 108
+    ClientWidth = 158
+    TabOrder = 1
+    object btnNorth: TSpeedButton
+      Left = 54
+      Height = 29
+      Top = 8
+      Width = 48
+      AllowAllUp = True
+      Anchors = [akTop, akRight]
+      Caption = 'N'
+      GroupIndex = 1
+    end
+    object btnWest: TSpeedButton
+      Left = 6
+      Height = 29
+      Top = 40
+      Width = 48
+      AllowAllUp = True
+      Anchors = [akTop, akRight]
+      Caption = 'W'
+      GroupIndex = 4
+    end
+    object btnUp: TSpeedButton
+      Left = 67
+      Height = 20
+      Top = 45
+      Width = 20
+      AllowAllUp = True
+      Anchors = [akTop, akRight]
+      OnClick = btnUpClick
+    end
+    object btnEast: TSpeedButton
+      Left = 100
+      Height = 29
+      Top = 40
+      Width = 48
+      AllowAllUp = True
+      Anchors = [akTop, akRight]
+      Caption = 'E'
+      GroupIndex = 3
+    end
+    object btnSouth: TSpeedButton
+      Left = 54
+      Height = 29
+      Top = 72
+      Width = 48
+      AllowAllUp = True
+      Anchors = [akTop, akRight]
+      Caption = 'S'
+      GroupIndex = 2
+    end
+  end
+  object GroupBox1: TGroupBox
+    Left = 645
+    Height = 207
+    Top = 121
+    Width = 161
+    Anchors = [akTop, akRight]
+    Caption = 'Wall Types'
+    ClientHeight = 187
+    ClientWidth = 157
+    TabOrder = 2
+    object btnEmpty: TBitBtn
+      Left = 23
+      Height = 30
+      Top = 7
+      Width = 115
+      Anchors = [akTop, akRight]
+      Caption = 'Empty'
+      OnClick = btnEmptyClick
+      TabOrder = 0
+    end
+    object btnDoor: TBitBtn
+      Left = 23
+      Height = 30
+      Top = 43
+      Width = 115
+      Anchors = [akTop, akRight]
+      Caption = 'Door'
+      OnClick = btnDoorClick
+      TabOrder = 1
+    end
+    object btnWall: TBitBtn
+      Left = 23
+      Height = 30
+      Top = 79
+      Width = 115
+      Anchors = [akTop, akRight]
+      Caption = 'Wall'
+      OnClick = btnWallClick
+      TabOrder = 2
+    end
+    object btnSecretDoor: TBitBtn
+      Left = 23
+      Height = 30
+      Top = 115
+      Width = 115
+      Anchors = [akTop, akRight]
+      Caption = 'Secret Door'
+      OnClick = btnSecretDoorClick
+      TabOrder = 3
+    end
+    object btnOneWayDoor: TBitBtn
+      Left = 23
+      Height = 30
+      Top = 151
+      Width = 115
+      Anchors = [akTop, akRight]
+      Caption = 'OneWay Door'
+      OnClick = btnOneWayDoorClick
+      TabOrder = 4
+    end
+  end
+  object GroupBox2: TGroupBox
+    Left = 645
+    Height = 152
+    Top = 328
+    Width = 161
+    Anchors = [akTop, akRight]
+    Caption = 'Floor Types'
+    ClientHeight = 132
+    ClientWidth = 157
+    TabOrder = 3
+    object chkClear: TCheckBox
+      Left = 24
+      Height = 21
+      Top = 8
+      Width = 50
+      Caption = 'Clear'
+      Color = 4875942
+      Font.Height = -13
+      ParentColor = False
+      ParentFont = False
+      TabOrder = 0
+    end
+    object chkClear1: TCheckBox
+      Left = 25
+      Height = 21
+      Top = 96
+      Width = 61
+      Caption = 'Exit Up'
+      Color = 4875942
+      Font.Height = -13
+      ParentColor = False
+      ParentFont = False
+      TabOrder = 1
+    end
+    object chkClear3: TCheckBox
+      Left = 24
+      Height = 21
+      Top = 64
+      Width = 77
+      Caption = 'Exit Down'
+      Color = 4875942
+      Font.Height = -13
+      ParentColor = False
+      ParentFont = False
+      TabOrder = 2
+    end
+    object chkClear4: TCheckBox
+      Left = 25
+      Height = 21
+      Top = 36
+      Width = 73
+      Caption = 'Darkness'
+      Color = 4875942
+      Font.Height = -13
+      ParentColor = False
+      ParentFont = False
+      TabOrder = 3
+    end
+    object btnClear: TButton
+      Left = 23
+      Height = 25
+      Top = 8
+      Width = 115
+      Caption = 'Clear'
+      OnClick = btnClearClick
+      TabOrder = 4
+    end
+    object btnDarkness: TButton
+      Left = 23
+      Height = 25
+      Top = 36
+      Width = 115
+      Caption = 'Darkness'
+      OnClick = btnDarknessClick
+      TabOrder = 5
+    end
+    object btnExitDown: TButton
+      Left = 23
+      Height = 25
+      Top = 64
+      Width = 115
+      Caption = 'Exit Down'
+      OnClick = btnExitDownClick
+      TabOrder = 6
+    end
+    object btnExitUp: TButton
+      Left = 23
+      Height = 25
+      Top = 92
+      Width = 115
+      Caption = 'Exit Up'
+      OnClick = btnExitUpClick
+      TabOrder = 7
+    end
+  end
+  object GroupBox3: TGroupBox
+    Left = 644
+    Height = 66
+    Top = 480
+    Width = 161
+    Anchors = [akTop, akRight]
+    Caption = 'Special'
+    ClientHeight = 46
+    ClientWidth = 157
+    TabOrder = 4
+    object btnSpecial: TBitBtn
+      Left = 23
+      Height = 30
+      Top = 7
+      Width = 115
+      Anchors = [akTop, akRight]
+      Caption = 'Description'
+      OnClick = btnSpecialClick
+      TabOrder = 0
+    end
+  end
+  object map: TImage
+    Left = 8
+    Height = 632
+    Top = 34
+    Width = 632
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    OnMouseDown = mapMouseDown
+    Stretch = True
+  end
+  object edtMapTitle: TEdit
+    Left = 8
+    Height = 23
+    Top = 6
+    Width = 632
+    Alignment = taCenter
+    Anchors = [akTop, akLeft, akRight]
+    Color = clSilver
+    OnEnter = edtMapTitleEnter
+    TabOrder = 5
+  end
+  object MainMenu1: TMainMenu
+    left = 32
+    top = 280
+    object miFile: TMenuItem
+      Caption = '&File'
+      object miLoadMap: TMenuItem
+        Caption = '&Load Map'
+        OnClick = miLoadMapClick
+      end
+      object miNewMap: TMenuItem
+        Caption = '&New Map'
+        OnClick = miNewMapClick
+      end
+      object miSaveMap: TMenuItem
+        Caption = '&Save Map'
+        OnClick = miSaveMapClick
+      end
+    end
+    object miMapOptions: TMenuItem
+      Caption = '&Map Options'
+      OnClick = miMapOptionsClick
+      object miGridWidth: TMenuItem
+        Caption = 'Grid Width = '
+        OnClick = mapOptionsClick
+      end
+      object miGridHeight: TMenuItem
+        Caption = 'Grid Height = '
+        OnClick = mapOptionsClick
+      end
+    end
+  end
+  object SaveDialog1: TSaveDialog
+    left = 32
+    top = 224
+  end
+  object OpenDialog1: TOpenDialog
+    left = 32
+    top = 168
+  end
+end
