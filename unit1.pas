@@ -80,7 +80,8 @@ type
     procedure FormCreate(Sender: TObject);
     procedure FormKeyPress(Sender: TObject; var Key: char);
     procedure FormResize(Sender: TObject);
-    procedure mapMouseDown(Sender: TObject; Button: TMouseButton; X, Y: Integer);
+    procedure mapMouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
     procedure memCellDescriptionChange(Sender: TObject);
     procedure mapOptionsClick(Sender: TObject);
     procedure miLoadMapClick(Sender: TObject);
@@ -225,7 +226,8 @@ begin
   UpdateMap;
 end;
 
-procedure TForm1.mapMouseDown(Sender: TObject; Button: TMouseButton; X, Y: Integer);
+procedure TForm1.mapMouseDown(Sender: TObject; Button: TMouseButton;
+  Shift: TShiftState; X, Y: Integer);
 var
   px, py, i,
   dx, dy, cx, cy,

@@ -76,7 +76,7 @@ type
     procedure btnUpClick(Sender: TObject);
     procedure btnWallClick(Sender: TObject);
     procedure edtMapTitleEnter(Sender: TObject);
-    procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
+    procedure FormClose(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormKeyPress(Sender: TObject; var Key: char);
     procedure FormResize(Sender: TObject);
@@ -118,7 +118,7 @@ uses
 
 { TForm1 }
 
-procedure TForm1.FormClose(Sender: TObject; var CloseAction: TCloseAction);
+procedure TForm1.FormClose(Sender: TObject);
 begin
   FreeAndNil(map);
 end;
@@ -228,6 +228,11 @@ end;
 
 procedure TForm1.mapMouseDown(Sender: TObject; Button: TMouseButton;
   Shift: TShiftState; X, Y: Integer);
+begin
+
+end;
+
+procedure TForm1.mapMouseDown(Sender: TObject; Button: TMouseButton; X, Y: Integer);
 var
   px, py, i,
   dx, dy, cx, cy,
@@ -414,7 +419,7 @@ procedure TForm1.miLoadMapClick(Sender: TObject);
 var
   filename, tempStr: string;
   F: TextFile;
-  x,y,i: integer;
+  x,y: integer;
 
   function ReturnWallType(aType: integer): TWallType;
   begin
